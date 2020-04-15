@@ -6,3 +6,4 @@
 - add: 스테이지 영역에 작업 파일 추가
 - commit: 세이브; 스테이지 영역의 파일들을 가지고 commit(=save)를 만들 수 있다.
 - push: 원격 저장소에 commit을 업로드
+- 코드 뭉치 버리기(checkout): 마지막 commit으로 되돌리고 싶을 때
