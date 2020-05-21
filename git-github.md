@@ -190,10 +190,42 @@ private에서 초대: repository -> collaborators -> username or email
 4-3 $ git clone (깃헙 레파지토리 url)
 4-4 $ cd (내려받은 폴더명) : 내려받은 폴더에서 작업하려면 이동해야 함
 
-5. 작업 주고받기 ( fetch )
+5. 작업 주고받기 ( fetch/merge )
+
+$ git fetch : 코드를 받아 옴 (작업한 코드의 충돌 방지) 
+$ git pull : 코드를 받은 즉시 merge (충돌 가능)
+
+협업 시, 항상 fetch/pull을 먼저 해줘야 함.
+github에서 pull하기 전에 push할 수 없음.
+
 A가 컴퓨터에서 작업을 수행하고 github에 올린다. 그 후, B가 다른 컴퓨터에서 내려받는다.
 B는 github에 들어가지 않고 $ git fetch -> $ git status 를 이용해 변경내역을 확인할 수 있다.
 
 5-1 A가 컴퓨터에서 작업을 수행하고 github에 올린다.
 	작업수행 -> $ git add -A -> $ git commit -m "edit dog name" -> $ git push
 5-2 B가 다른 컴퓨터에서 내려받는다. 
+	$ git fetch -> $ git status : 커밋 몇 개가 뒤쳐저 있는지 확인 -> $ git pull origin(원격명) master(브랜치명)
+
+6. 브랜치 주고받기
+
+$ git checkout -b (브랜치명) : 브랜치를 만듦과 동시에 체크아웃 ($ git branch + $ git checkout 역할)
+$ git fetch
+$ git branch -a : 로컬과 원격 모두의 브랜치 조회
+$ git checkout -b (로컬브랜치) (원격저장소/원격브랜치) : 로컬브랜치를 만들어서 원격저장소의 브랜치를 받음
+
+7. 충돌 해결하기	
+
+
+
+
+참고자료: 
+
+얄팍한 코딩사전 - 가장 쉬운 Git 강좌
+https://www.youtube.com/watch?v=FXDjmsiv8fI
+https://www.youtube.com/watch?v=GaKjTjwcKQo
+
+자주 사용하는 기초 git 명령어 정리
+https://medium.com/@pks2974/%EC%9E%90%EC%A3%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EA%B8%B0%EC%B4%88-git-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0-533b3689db81 
+
+누구나 쉽게 이해하는 git 입문
+https://backlog.com/git-tutorial/kr/
